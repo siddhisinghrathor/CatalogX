@@ -63,12 +63,12 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Filters & Search - Updated: No border line, smaller padding */}
+        {/* Filters & Search - Updated: Removed sticky positioning */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col lg:flex-row gap-4 mb-20 sticky top-28 z-30"
+          className="flex flex-col lg:flex-row gap-4 mb-20 relative z-30"
         >
           <div className="relative flex-grow">
             <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-600" size={18} />

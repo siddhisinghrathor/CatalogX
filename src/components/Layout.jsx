@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import { LayoutGrid, Info, Phone, Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,9 +16,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/home' },
-    { name: 'Categories', path: '/home' },
-    { name: 'About', path: '#' },
-    { name: 'Contact', path: '#' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -47,9 +46,12 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="w-[1px] h-6 bg-white/10 mx-2" />
-          <button className="px-6 py-2 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center gap-2">
+          <Link 
+            to="/contact"
+            className="px-6 py-2 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center gap-2"
+          >
             Talk to Us <ArrowUpRight size={14} />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -108,10 +110,9 @@ const Footer = () => (
       <div>
         <h4 className="text-xs uppercase font-black tracking-[0.3em] text-white/40 mb-10">Navigation</h4>
         <ul className="space-y-6 text-xl font-bold">
-          <li className="hover:text-primary cursor-pointer transition-colors">Explorer</li>
-          <li className="hover:text-primary cursor-pointer transition-colors">Showcase</li>
-          <li className="hover:text-primary cursor-pointer transition-colors">Pricing</li>
-          <li className="hover:text-primary cursor-pointer transition-colors">About</li>
+          <Link to="/home" className="block hover:text-primary transition-colors">Explorer</Link>
+          <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
+          <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
         </ul>
       </div>
       <div>
@@ -134,12 +135,12 @@ const Footer = () => (
   </footer>
 );
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black">
       <Navbar />
       <main className="flex-grow">
-        {children}
+        <Outlet />
       </main>
       <Footer />
     </div>

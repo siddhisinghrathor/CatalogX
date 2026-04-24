@@ -76,7 +76,7 @@ const Landing = () => {
                   className="group relative px-10 py-5 bg-white text-black font-black text-lg rounded-[2rem] overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Launch Explorer <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+                    Enter Collection <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
                   </span>
                 </button>
                 
