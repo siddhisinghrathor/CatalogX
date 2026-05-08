@@ -57,7 +57,7 @@ const CategorySection = ({ title, products }) => {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative group overflow-visible">
+      <div className="relative overflow-visible">
         {/* Apple Style Side Arrows */}
         <AnimatePresence>
           {showLeftArrow && (

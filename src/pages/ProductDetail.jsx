@@ -41,11 +41,13 @@ const ProductDetail = () => {
           className="relative group"
         >
           <div className="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 group-hover:opacity-30 transition-opacity" />
-          <div className="relative aspect-square rounded-3xl overflow-hidden glass border-white/10 shadow-2xl">
-            <img
+          <div className="relative aspect-square rounded-3xl overflow-hidden bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(59,130,246,0.3)] p-12 flex items-center justify-center">
+            <motion.img
+              animate={{ y: [-15, 15, -15] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
               src={product.image}
               alt={product.itemname}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.8)]"
             />
           </div>
         </motion.div>
@@ -76,12 +78,12 @@ const ProductDetail = () => {
           {/* Dynamic Properties */}
           <div className="mb-10">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <Box size={22} className="text-primary" /> Specifications
+              <Box size={22} className="text-primary" /> Specifications & Features
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {product.itemprops.map((prop, idx) => (
                 <motion.div
-                  key={idx}
+                  key={`prop-${idx}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
@@ -91,7 +93,28 @@ const ProductDetail = () => {
                   <span className="text-xl font-semibold text-white">{prop.value}</span>
                 </motion.div>
               ))}
+              {product.price && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="p-5 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col gap-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]"
+                >
+                  <span className="text-primary text-xs font-bold uppercase tracking-widest">Price</span>
+                  <span className="text-2xl font-black text-white">{product.price}</span>
+                </motion.div>
+              )}
             </div>
+            
+            {product.highlights && product.highlights.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {product.highlights.map((highlight, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-slate-300">
+                    ✨ {highlight}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* AI Insights Panel */}

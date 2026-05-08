@@ -51,35 +51,69 @@ const FloatingBot = ({ onClick, isOpen }) => {
   if (isOpen) return null;
 
   return (
-    <motion.div
-      onClick={introFinished ? onClick : undefined}
-      className={`fixed z-50 ${introFinished ? 'cursor-pointer' : 'pointer-events-none'}`}
-      initial={isLanding ? { 
-        top: '50%', left: '50%', x: '-50%', y: '-50%', scale: 0, opacity: 0 
-      } : { 
-        bottom: '2rem', right: '2rem', scale: 0, opacity: 0 
-      }}
-      animate={introFinished ? { 
-        top: 'auto', left: 'auto', bottom: '2rem', right: '2rem', x: 0, y: 0, scale: 1, opacity: 1 
-      } : { 
-        top: '50%', left: '50%', x: '-50%', y: '-50%', scale: 3, opacity: 1 
-      }}
-      transition={introFinished ? { type: "spring", stiffness: 60, damping: 15 } : { delay: 0.8, type: "spring", stiffness: 50 }}
-      whileHover={introFinished ? { scale: 1.1 } : {}}
-      whileTap={introFinished ? { scale: 0.9 } : {}}
-    >
-      {/* Angel White Light from Behind */}
+    <>
+      {/* Cosmic Astro Stars & Neon Blue Background */}
       <AnimatePresence>
         {isLanding && !introFinished && (
           <motion.div
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: [0, 1, 1, 0], scaleY: [0, 1, 1, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 4, times: [0, 0.2, 0.8, 1], ease: "easeInOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-[200vh] bg-gradient-to-b from-transparent via-white to-transparent blur-[80px] pointer-events-none -z-10"
-          />
+            transition={{ duration: 0.8 }}
+            className="fixed inset-0 bg-black z-40 pointer-events-none overflow-hidden"
+          >
+            {/* Deep Neon Blue Space Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-cyan-900/20 blur-[150px] rounded-full" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/30 blur-[100px] rounded-full" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-white/10 blur-[50px] rounded-full" />
+
+            {/* Astro Stars Array */}
+            {[...Array(60)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: Math.random() * 0.5 + 0.1, scale: Math.random() * 0.5 + 0.5 }}
+                animate={{ 
+                  opacity: [null, Math.random() * 0.8 + 0.5, Math.random() * 0.5 + 0.1],
+                  scale: [null, Math.random() * 1.5 + 0.8, Math.random() * 0.5 + 0.5]
+                }}
+                transition={{ 
+                  duration: Math.random() * 3 + 1.5, 
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+                className="absolute bg-white rounded-full"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
+                  boxShadow: '0 0 15px 3px rgba(34, 211, 238, 0.6)'
+                }}
+              />
+            ))}
+          </motion.div>
         )}
       </AnimatePresence>
+
+      <motion.div
+        onClick={introFinished ? onClick : undefined}
+        className={`fixed z-50 ${introFinished ? 'cursor-pointer' : 'pointer-events-none'}`}
+        initial={isLanding ? { 
+          top: '50%', left: '50%', x: '-50%', y: '-50%', scale: 0, opacity: 0 
+        } : { 
+          bottom: '2rem', right: '2rem', scale: 0, opacity: 0 
+        }}
+        animate={introFinished ? { 
+          top: 'auto', left: 'auto', bottom: '2rem', right: '2rem', x: 0, y: 0, scale: 1, opacity: 1 
+        } : { 
+          top: '50%', left: '50%', x: '-50%', y: '-50%', scale: 3, opacity: 1 
+        }}
+        transition={introFinished ? { type: "spring", stiffness: 60, damping: 15 } : { delay: 0.8, type: "spring", stiffness: 50 }}
+        whileHover={introFinished ? { scale: 1.1 } : {}}
+        whileTap={introFinished ? { scale: 0.9 } : {}}
+      >
+
 
       <motion.div animate={controls} className="relative w-24 h-24 flex items-center justify-center">
         {/* Thrust Exhaust */}
@@ -145,7 +179,8 @@ const FloatingBot = ({ onClick, isOpen }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

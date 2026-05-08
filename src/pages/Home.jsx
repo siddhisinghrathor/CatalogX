@@ -73,12 +73,12 @@ const Home = () => {
           transition={{ delay: 0.2 }}
           className="flex flex-col lg:flex-row gap-4 mb-20 relative z-30"
         >
-          <div className="relative flex-grow">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-600" size={18} />
+          <div className="relative flex-grow group">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-cyan-400 transition-colors" size={18} />
             <input
               type="text"
               placeholder="Semantic AI Search (e.g., 'fastest bike')..."
-              className="w-full bg-white/[0.04] backdrop-blur-3xl border border-white/5 rounded-2xl py-4 pl-14 pr-12 focus:outline-none focus:ring-1 focus:ring-white/20 transition-all text-white placeholder:text-slate-600 text-base"
+              className="w-full bg-black/40 backdrop-blur-3xl border border-white/10 hover:border-cyan-500/30 shadow-[0_0_20px_rgba(59,130,246,0.1)] focus:shadow-[0_0_40px_rgba(59,130,246,0.4)] rounded-2xl py-4 pl-14 pr-12 focus:outline-none focus:border-cyan-500/50 transition-all text-white placeholder:text-slate-600 text-base"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -96,10 +96,10 @@ const Home = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+                className={`px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border backdrop-blur-xl ${
                   selectedCategory === category 
-                  ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.15)]' 
-                  : 'bg-white/5 text-slate-500 border-white/5 hover:border-white/10'
+                  ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/50 shadow-[0_0_20px_rgba(59,130,246,0.3)]' 
+                  : 'bg-black/40 text-slate-500 border-white/5 hover:border-cyan-500/30 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)]'
                 }`}
               >
                 {category}

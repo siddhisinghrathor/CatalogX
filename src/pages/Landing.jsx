@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles, Zap, Layers, Globe, Play, Shield, Cpu } from 'lucide-react';
 
+let hasPlayedLandingIntro = false;
+
 const Landing = () => {
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
@@ -17,11 +19,15 @@ const Landing = () => {
     alert("Experience the FlexiCatalog Showcase: Coming Soon with 4K Virtual Tours!");
   };
 
+  React.useEffect(() => {
+    hasPlayedLandingIntro = true;
+  }, []);
+
   return (
     <motion.div 
-      initial={{ x: '-100vw' }}
-      animate={{ x: 0 }}
-      transition={{ delay: 4.5, type: 'spring', stiffness: 40, damping: 20 }}
+      initial={hasPlayedLandingIntro ? { opacity: 0 } : { x: '-100vw' }}
+      animate={hasPlayedLandingIntro ? { opacity: 1 } : { x: 0 }}
+      transition={hasPlayedLandingIntro ? { duration: 0.8 } : { delay: 4.5, type: 'spring', stiffness: 40, damping: 20 }}
       className="relative min-h-[250vh] bg-black text-white overflow-hidden"
     >
       {/* Grid Background */}

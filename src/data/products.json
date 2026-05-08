@@ -20,7 +20,22 @@
       {
         "label": "Capacity",
         "value": "5 Seater"
+      },
+      {
+        "label": "Top Speed",
+        "value": "196 mph"
       }
+    ],
+    "price": "$41,171",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -40,7 +55,22 @@
       {
         "label": "Battery",
         "value": "3577 mAh"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$607",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -61,6 +91,17 @@
         "label": "Top Speed",
         "value": "125 mph"
       }
+    ],
+    "price": "$51,689",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -80,7 +121,22 @@
       {
         "label": "Display",
         "value": "Liquid Retina XDR"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$1,923",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -100,7 +156,22 @@
       {
         "label": "Max Power",
         "value": "214 hp"
+      },
+      {
+        "label": "Top Speed",
+        "value": "154 mph"
       }
+    ],
+    "price": "$14,219",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -116,7 +187,22 @@
       {
         "label": "Stylus",
         "value": "S-Pen Included"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$696",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -132,7 +218,22 @@
       {
         "label": "Weight",
         "value": "196 kg"
+      },
+      {
+        "label": "Top Speed",
+        "value": "169 mph"
       }
+    ],
+    "price": "$16,298",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -148,7 +249,22 @@
       {
         "label": "Chassis",
         "value": "CNC Aluminum"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$1,788",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -160,7 +276,22 @@
       {
         "label": "AWD",
         "value": "Yes"
+      },
+      {
+        "label": "Top Speed",
+        "value": "134 mph"
       }
+    ],
+    "price": "$48,296",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -172,7 +303,22 @@
       {
         "label": "Chip",
         "value": "Tensor G4"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$952",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -184,7 +330,22 @@
       {
         "label": "Supercharged",
         "value": "Yes"
+      },
+      {
+        "label": "Top Speed",
+        "value": "165 mph"
       }
+    ],
+    "price": "$10,788",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -196,7 +357,22 @@
       {
         "label": "Screen",
         "value": "OLED"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$1,477",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -208,7 +384,22 @@
       {
         "label": "Hybrid",
         "value": "Available"
+      },
+      {
+        "label": "Top Speed",
+        "value": "170 mph"
       }
+    ],
+    "price": "$52,515",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -220,7 +411,22 @@
       {
         "label": "Charge",
         "value": "100W"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$867",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -232,7 +438,22 @@
       {
         "label": "HP",
         "value": "205"
+      },
+      {
+        "label": "Top Speed",
+        "value": "199 mph"
       }
+    ],
+    "price": "$19,603",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -244,7 +465,22 @@
       {
         "label": "Engine",
         "value": "2.8L Diesel"
+      },
+      {
+        "label": "Top Speed",
+        "value": "173 mph"
       }
+    ],
+    "price": "$43,622",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -256,7 +492,22 @@
       {
         "label": "Glyph",
         "value": "Version 2.0"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$808",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -268,7 +519,22 @@
       {
         "label": "Engine",
         "value": "Milwaukee-Eight 114"
+      },
+      {
+        "label": "Top Speed",
+        "value": "155 mph"
       }
+    ],
+    "price": "$5,462",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -280,7 +546,22 @@
       {
         "label": "GPU",
         "value": "RTX 4060"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$1,475",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -292,7 +573,22 @@
       {
         "label": "TSI",
         "value": "1.5L"
+      },
+      {
+        "label": "Top Speed",
+        "value": "159 mph"
       }
+    ],
+    "price": "$65,840",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -304,7 +600,22 @@
       {
         "label": "CC",
         "value": "2458cc"
+      },
+      {
+        "label": "Top Speed",
+        "value": "155 mph"
       }
+    ],
+    "price": "$16,184",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -316,7 +627,22 @@
       {
         "label": "CPU",
         "value": "Intel i7"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$1,164",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -328,7 +654,22 @@
       {
         "label": "Engine",
         "value": "5.0L Coyote V8"
+      },
+      {
+        "label": "Top Speed",
+        "value": "153 mph"
       }
+    ],
+    "price": "$47,227",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -340,7 +681,22 @@
       {
         "label": "Tech",
         "value": "Crossplane"
+      },
+      {
+        "label": "Top Speed",
+        "value": "192 mph"
       }
+    ],
+    "price": "$16,789",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -352,7 +708,22 @@
       {
         "label": "Nits",
         "value": "400"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$2,136",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -364,7 +735,22 @@
       {
         "label": "0-100",
         "value": "3.3s"
+      },
+      {
+        "label": "Top Speed",
+        "value": "166 mph"
       }
+    ],
+    "price": "$33,842",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -377,6 +763,17 @@
         "label": "Top Speed",
         "value": "299 km/h"
       }
+    ],
+    "price": "$19,096",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -388,7 +785,22 @@
       {
         "label": "Weight",
         "value": "1435 kg"
+      },
+      {
+        "label": "Top Speed",
+        "value": "178 mph"
       }
+    ],
+    "price": "$47,203",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -400,7 +812,22 @@
       {
         "label": "Display",
         "value": "18-inch QHD+"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$2,188",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -412,7 +839,22 @@
       {
         "label": "Offroad",
         "value": "Rock-Trac 4WD"
+      },
+      {
+        "label": "Top Speed",
+        "value": "131 mph"
       }
+    ],
+    "price": "$74,231",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -424,7 +866,22 @@
       {
         "label": "Weight",
         "value": "165kg"
+      },
+      {
+        "label": "Top Speed",
+        "value": "190 mph"
       }
+    ],
+    "price": "$9,312",
+    "highlights": [
+      "Quickshifter+",
+      "Cornering ABS",
+      "TFT Display"
+    ],
+    "features": [
+      "Slipper Clutch",
+      "Traction Control",
+      "Ride Modes"
     ]
   },
   {
@@ -436,7 +893,22 @@
       {
         "label": "Display",
         "value": "144Hz pOLED"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$534",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -448,7 +920,22 @@
       {
         "label": "Audio",
         "value": "3.5mm Jack Included"
+      },
+      {
+        "label": "Processor",
+        "value": "Octa-core 3.2GHz"
       }
+    ],
+    "price": "$721",
+    "highlights": [
+      "120Hz Display",
+      "All-day Battery",
+      "Pro Camera System"
+    ],
+    "features": [
+      "5G Ready",
+      "Water Resistant",
+      "Wireless Charging"
     ]
   },
   {
@@ -460,7 +947,22 @@
       {
         "label": "Cooling",
         "value": "Tempest Cooling"
+      },
+      {
+        "label": "Clock Speed",
+        "value": "Up to 5.4GHz"
       }
+    ],
+    "price": "$2,302",
+    "highlights": [
+      "Desktop-class Performance",
+      "Mini-LED Display",
+      "Studio Mics"
+    ],
+    "features": [
+      "Thunderbolt 4",
+      "Wi-Fi 6E",
+      "Mechanical Keyboard"
     ]
   },
   {
@@ -472,7 +974,22 @@
       {
         "label": "Ground Clearance",
         "value": "291mm"
+      },
+      {
+        "label": "Top Speed",
+        "value": "190 mph"
       }
+    ],
+    "price": "$58,131",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   },
   {
@@ -484,7 +1001,22 @@
       {
         "label": "Hybrid",
         "value": "V12 PHEV"
+      },
+      {
+        "label": "Top Speed",
+        "value": "171 mph"
       }
+    ],
+    "price": "$70,898",
+    "highlights": [
+      "0-60 in 3.5s",
+      "Level 2 Autonomy",
+      "Premium Audio"
+    ],
+    "features": [
+      "Heated Seats",
+      "Panoramic Roof",
+      "Apple CarPlay"
     ]
   }
 ]

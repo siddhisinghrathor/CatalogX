@@ -10,6 +10,7 @@ const ProductCard = ({ product }) => {
   const { toggleCompareItem, compareItems } = useCompare();
   
   const isSelectedForCompare = compareItems.some(p => p.id === product.id);
+  const [isHovered, setIsHovered] = useState(false);
   
   // Mouse Position for 3D Tilt
   const x = useMotionValue(0);
@@ -39,11 +40,13 @@ const ProductCard = ({ product }) => {
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
+    setIsHovered(false);
   };
 
   return (
     <motion.div
       ref={cardRef}
+      onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -54,19 +57,22 @@ const ProductCard = ({ product }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group relative flex flex-col glass-card rounded-[3rem] overflow-hidden cursor-pointer h-full perspective-1000"
+      className="group relative flex flex-col rounded-[3rem] overflow-hidden cursor-pointer h-full perspective-1000 bg-black/40 backdrop-blur-xl border border-white/[0.05] shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:border-white/[0.2] transition-all duration-500"
       onClick={() => navigate(`/product/${product.id}`)}
     >
       {/* 3D Floating Image Container */}
       <div 
-        className="relative aspect-[16/10] overflow-hidden m-4 rounded-[2.5rem] bg-gradient-to-b from-white/[0.03] to-transparent shadow-2xl flex items-center justify-center p-4"
+        className="relative aspect-[16/10] overflow-hidden m-4 rounded-[2.5rem] bg-white/[0.02] shadow-2xl flex items-center justify-center p-4"
         style={{ transform: "translateZ(50px)" }}
       >
         <motion.img
+          animate={isHovered ? { y: [-10, 10, -10] } : { y: 0 }}
+          transition={isHovered ? { repeat: Infinity, duration: 3, ease: "easeInOut" } : { duration: 0.5 }}
           src={product.image}
           alt={product.itemname}
-          className="w-full h-full object-contain transition-all duration-700"
+          className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)] group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
+          style={{ transform: "translateZ(30px)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none z-10" />
         

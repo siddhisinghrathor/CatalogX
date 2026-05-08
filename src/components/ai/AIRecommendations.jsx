@@ -86,12 +86,12 @@ const AIRecommendations = ({ currentProduct }) => {
             }}
             className="group cursor-pointer glass p-4 rounded-3xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-2"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4 relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4 relative bg-black/40 border border-white/5 p-6 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
               <img 
                 src={rec.image} 
                 alt={rec.itemname} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute bottom-3 left-3 right-3 z-20">
                 <p className="text-xs font-bold text-primary bg-primary/20 backdrop-blur-md px-2 py-1 rounded inline-block">
