@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import productsData from '../data/products.json';
 import CategorySection from '../components/CategorySection';
-import { Search, Filter, ArrowUpRight } from 'lucide-react';
+import { Search, Filter, ArrowUpRight, Sparkles, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSemanticSearch } from '../hooks/useSemanticSearch';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,13 +11,15 @@ const Home = () => {
 
   const categories = ['All', ...new Set(productsData.map(p => p.category))];
 
+  const { results: semanticResultIds, isSearching } = useSemanticSearch(searchTerm);
+
   const filteredProducts = useMemo(() => {
     return productsData.filter(product => {
-      const matchesSearch = product.itemname.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = semanticResultIds.includes(product.id);
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [semanticResultIds, selectedCategory]);
 
   const groupedProducts = useMemo(() => {
     return filteredProducts.reduce((acc, product) => {
@@ -74,11 +77,18 @@ const Home = () => {
             <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-600" size={18} />
             <input
               type="text"
-              placeholder="Search products..."
-              className="w-full bg-white/[0.04] backdrop-blur-3xl border border-white/5 rounded-2xl py-4 pl-14 pr-6 focus:outline-none focus:ring-1 focus:ring-white/20 transition-all text-white placeholder:text-slate-600 text-base"
+              placeholder="Semantic AI Search (e.g., 'fastest bike')..."
+              className="w-full bg-white/[0.04] backdrop-blur-3xl border border-white/5 rounded-2xl py-4 pl-14 pr-12 focus:outline-none focus:ring-1 focus:ring-white/20 transition-all text-white placeholder:text-slate-600 text-base"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+              {isSearching ? (
+                <Loader2 className="animate-spin text-primary" size={18} />
+              ) : searchTerm ? (
+                <Sparkles className="text-primary" size={18} />
+              ) : null}
+            </div>
           </div>
 
           <div className="flex gap-2 overflow-x-auto pb-1 lg:pb-0 no-scrollbar">

@@ -18,7 +18,12 @@ const Landing = () => {
   };
 
   return (
-    <div className="relative min-h-[250vh] bg-black text-white overflow-hidden">
+    <motion.div 
+      initial={{ x: '-100vw' }}
+      animate={{ x: 0 }}
+      transition={{ delay: 4.5, type: 'spring', stiffness: 40, damping: 20 }}
+      className="relative min-h-[250vh] bg-black text-white overflow-hidden"
+    >
       {/* Grid Background */}
       <div className="fixed inset-0 grid-background pointer-events-none" />
       
@@ -204,7 +209,7 @@ const Landing = () => {
         <div className="w-[1px] h-10 bg-gradient-to-b from-primary to-transparent" />
         <span className="text-[10px] uppercase tracking-[0.2em]">Scroll to Explore</span>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

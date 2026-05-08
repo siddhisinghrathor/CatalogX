@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { LayoutGrid, Info, Phone, Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import FloatingParticles from './3d/FloatingParticles';
+import MagneticButton from './ui/MagneticButton';
 
 const Navbar = () => {
   const location = useLocation();
@@ -22,9 +24,8 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className={`max-w-7xl mx-auto flex items-center justify-between p-4 rounded-[2rem] transition-all duration-500 ${
-        scrolled ? 'glass shadow-2xl' : 'bg-transparent'
-      }`}>
+      <div className={`max-w-7xl mx-auto flex items-center justify-between p-4 rounded-[2rem] transition-all duration-500 ${scrolled ? 'glass shadow-2xl' : 'bg-transparent'
+        }`}>
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-xl group-hover:rotate-[15deg] transition-transform duration-500">
             F
@@ -35,27 +36,28 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.name}
               to={link.path}
-              className={`px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest transition-all ${
-                location.pathname === link.path ? 'bg-white/10 text-white' : 'text-slate-400 hover:text-white'
-              }`}
+              className={`px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest transition-all ${location.pathname === link.path ? 'bg-white/10 text-white' : 'text-slate-400 hover:text-white'
+                }`}
             >
               {link.name}
             </Link>
           ))}
           <div className="w-[1px] h-6 bg-white/10 mx-2" />
-          <Link 
-            to="/contact"
-            className="px-6 py-2 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center gap-2"
-          >
-            Talk to Us <ArrowUpRight size={14} />
-          </Link>
+          <MagneticButton>
+            <Link
+              to="/contact"
+              className="px-6 py-2 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center gap-2"
+            >
+              Talk to Us <ArrowUpRight size={14} />
+            </Link>
+          </MagneticButton>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white p-2 bg-white/5 rounded-xl border border-white/10"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -74,7 +76,7 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <Link 
+                <Link
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
@@ -103,7 +105,7 @@ const Footer = () => (
           <span className="text-4xl font-black tracking-tighter">FlexiCatalog</span>
         </div>
         <p className="text-slate-500 max-w-sm text-lg leading-relaxed">
-          Crafting the next generation of digital product experiences. 
+          Crafting the next generation of digital product experiences.
           Dynamic, immersive, and built for performance.
         </p>
       </div>
@@ -137,9 +139,10 @@ const Footer = () => (
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col bg-black relative">
+      <FloatingParticles />
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         <Outlet />
       </main>
       <Footer />

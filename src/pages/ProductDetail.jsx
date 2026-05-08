@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import productsData from '../data/products.json';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Share2, Heart, ShieldCheck, Box } from 'lucide-react';
+import AIProductInsights from '../components/ai/AIProductInsights';
+import AIRecommendations from '../components/ai/AIRecommendations';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -92,6 +94,9 @@ const ProductDetail = () => {
             </div>
           </div>
 
+          {/* AI Insights Panel */}
+          <AIProductInsights product={product} />
+
           {/* Actions */}
           <div className="mt-auto flex flex-wrap gap-4 pt-10 border-t border-white/5">
             <button className="btn btn-primary flex-grow justify-center py-4 text-lg">
@@ -115,6 +120,9 @@ const ProductDetail = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* AI Recommendations */}
+      <AIRecommendations currentProduct={product} />
     </div>
   );
 };

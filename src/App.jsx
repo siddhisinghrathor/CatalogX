@@ -7,6 +7,8 @@ import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import AIAssistant from './components/ai/AIAssistant';
+import AICompareModal from './components/ai/AICompareModal';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
+      <AIAssistant />
+      <AICompareModal />
     </>
   );
 }
