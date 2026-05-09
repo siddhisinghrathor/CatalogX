@@ -10,9 +10,11 @@ import ScrollToTop from './components/ScrollToTop';
 import AIAssistant from './components/ai/AIAssistant';
 import AICompareModal from './components/ai/AICompareModal';
 
+import SmoothScroll from './components/SmoothScroll';
+
 function App() {
   return (
-    <>
+    <SmoothScroll>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -25,7 +27,7 @@ function App() {
       </Routes>
       <AIAssistant />
       <AICompareModal />
-    </>
+    </SmoothScroll>
   );
 }
 

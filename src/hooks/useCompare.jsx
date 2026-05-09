@@ -12,6 +12,10 @@ export const CompareProvider = ({ children }) => {
       if (exists) {
         return prev.filter(p => p.id !== product.id);
       } else {
+        if (prev.length > 0 && prev[0].category !== product.category) {
+          alert('Items from different categories cannot be compared.');
+          return prev;
+        }
         if (prev.length >= 2) {
           // Replace the second item if already 2
           return [prev[0], product];

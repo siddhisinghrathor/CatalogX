@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const CategorySection = ({ title, products }) => {
+const CategorySection = ({ title, products, layout = 'horizontal' }) => {
   const scrollRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -43,22 +43,23 @@ const CategorySection = ({ title, products }) => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true, margin: "-100px" }}
       className="relative group/section"
     >
       {/* Header - Cleaned up: removed right-side info and buttons */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-4">
         <div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter">{title}</h2>
+          <h2 className="text-3xl md:text-5xl font-light tracking-widest uppercase text-white/90">{title}</h2>
         </div>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative overflow-visible">
+      <div className={`relative ${layout === 'horizontal' ? 'overflow-visible' : ''}`}>
         {/* Apple Style Side Arrows */}
+        {layout === 'horizontal' && (
         <AnimatePresence>
           {showLeftArrow && (
             <motion.button
@@ -73,6 +74,9 @@ const CategorySection = ({ title, products }) => {
           )}
         </AnimatePresence>
 
+        )}
+
+        {layout === 'horizontal' && (
         <AnimatePresence>
           {showRightArrow && (
             <motion.button
@@ -86,27 +90,35 @@ const CategorySection = ({ title, products }) => {
             </motion.button>
           )}
         </AnimatePresence>
+        )}
 
         {/* Scrollable Area */}
         <div
-          ref={scrollRef}
-          className="flex gap-8 overflow-x-auto no-scrollbar scroll-smooth pb-10 px-4 md:px-0 snap-x snap-mandatory"
-          style={{
+          ref={layout === 'horizontal' ? scrollRef : null}
+          className={layout === 'horizontal' 
+            ? "flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-10 px-4 md:px-0 snap-x snap-mandatory"
+            : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-10 px-4 md:px-0"
+          }
+          style={layout === 'horizontal' ? {
             touchAction: 'pan-x',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
-          }}
+          } : {}}
         >
           {products.map((product) => (
             <div
               key={product.id}
-              className="min-w-[80vw] md:min-w-[480px] snap-center md:snap-start"
+              className={layout === 'horizontal' 
+                ? "w-[80vw] sm:w-[260px] md:w-[280px] lg:w-[300px] shrink-0 snap-center md:snap-start" 
+                : "w-full"
+              }
             >
               <ProductCard product={product} />
             </div>
           ))}
           {/* End Spacer */}
-          <div className="min-w-[40px] shrink-0" />        </div>
+          {layout === 'horizontal' && <div className="min-w-[40px] shrink-0" />}
+        </div>
       </div>
     </motion.section>
   );

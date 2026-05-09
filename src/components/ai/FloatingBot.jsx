@@ -23,32 +23,32 @@ const FloatingBot = ({ onClick, isOpen }) => {
   }, []);
 
   useEffect(() => {
-    const sequence = async () => {
-      if (isLanding && !introFinished) {
-        // Wait for the white light to establish
-        await new Promise(resolve => setTimeout(resolve, 800));
-        setGreetingText("HELLO! I am your AI Guide.");
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        setGreetingText("Let's explore the catalog!");
-        await new Promise(resolve => setTimeout(resolve, 1500));
+    const timers = [];
+    if (isLanding && !introFinished) {
+      timers.push(setTimeout(() => setGreetingText("HELLO! I am your AI Guide."), 800));
+      timers.push(setTimeout(() => setGreetingText("Let's explore the catalog!"), 2800));
+      timers.push(setTimeout(() => {
         setIntroFinished(true);
         setGreetingText("Need help finding something?");
-      }
-      
-      if (!isOpen) {
-        while (true) {
-          await controls.start({
-            y: [0, -15, 0],
-            rotate: [0, 5, -5, 0],
-            transition: { duration: 4, ease: "easeInOut" }
-          });
-        }
-      }
-    };
-    sequence();
-  }, [controls, isOpen, isLanding, introFinished]);
+      }, 4300));
+    }
+    return () => timers.forEach(clearTimeout);
+  }, [isLanding, introFinished]);
+
+  // Separate effect for idle float animation — uses CSS repeat, no while loop
+  useEffect(() => {
+    if (isOpen) return;
+    controls.start({
+      y: [0, -12, 0],
+      rotate: [0, 4, -4, 0],
+      transition: { duration: 4, ease: "easeInOut", repeat: Infinity, repeatType: "loop" }
+    });
+    return () => controls.stop();
+  }, [controls, isOpen]);
 
   if (isOpen) return null;
+  // On landing page the inline BotSiddhi handles the intro — no duplicate
+  if (isLanding && !introFinished) return null;
 
   return (
     <>

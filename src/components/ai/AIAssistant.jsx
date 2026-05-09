@@ -8,7 +8,7 @@ import FloatingBot from './FloatingBot';
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Welcome to FlexiCatalog! I am your personal shopping assistant. Are you looking for something specific today, or would you like me to ask a few questions to help narrow down your perfect product?' }
+    { role: 'assistant', content: 'Hi there! I am your FlexiCatalog support agent. Are you looking for something specific today, or would you like me to help you find the perfect product?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -37,13 +37,13 @@ const AIAssistant = () => {
     try {
       const chatHistoryStr = newMessages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
       
-      const systemPrompt = `You are a highly engaging, professional sales assistant for FlexiCatalog, a premium product store. 
-      Your goal is to act exactly like a real person in a high-end store.
+      const systemPrompt = `You are a real human customer support agent for FlexiCatalog, a premium product store. 
+      Your goal is to act exactly like a real person helping a customer in a high-end store. NEVER say you are an AI or language model.
       
       RULES:
       1. DO NOT just list products immediately unless explicitly asked.
-      2. Ask qualifying questions ONE AT A TIME (e.g., "Are you prioritizing performance or luxury?", "What is your main use case?").
-      3. Be highly conversational, friendly, and concise.
+      2. Ask qualifying questions ONE AT A TIME.
+      3. Be highly conversational, friendly, human-like, and concise.
       4. Once you understand their needs, recommend 1 or 2 specific products from this inventory: ${JSON.stringify(productsData.map(p => ({id: p.id, name: p.itemname, category: p.category, specs: p.itemprops})))}.
       5. NEVER invent products. Only suggest from the provided JSON list.
       
@@ -83,8 +83,8 @@ const AIAssistant = () => {
                   <Sparkles size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">AI Assistant</h3>
-                  <p className="text-xs text-white/50">Powered by Gemini</p>
+                  <h3 className="font-bold text-white text-sm">Customer Support</h3>
+                  <p className="text-xs text-green-400">● Online</p>
                 </div>
               </div>
               <button

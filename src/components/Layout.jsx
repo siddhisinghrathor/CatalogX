@@ -19,7 +19,6 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/home' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -114,7 +113,6 @@ const Footer = () => (
         <ul className="space-y-6 text-xl font-bold">
           <Link to="/home" className="block hover:text-primary transition-colors">Explorer</Link>
           <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
-          <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
         </ul>
       </div>
       <div>
@@ -150,4 +148,5 @@ const Layout = () => {
   );
 };
 
+export { Navbar };
 export default Layout;
