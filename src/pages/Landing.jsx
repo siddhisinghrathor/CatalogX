@@ -242,7 +242,7 @@ const Landing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCTA, setShowCTA]   = useState(false);
   const [mouseX, setMouseX]     = useState(0);
-  const [greeting, setGreeting] = useState('Hi! I\'m Siddhi. Ready to discover? 🚀');
+  const [greeting, setGreeting] = useState('Hi! I\'m Siddhi. Ready for a new way to shop? 🛍️');
 
   // Mouse tracking for eye
   useEffect(() => {
@@ -254,7 +254,7 @@ const Landing = () => {
   // Intro sequence — all timers cleaned up on unmount
   useEffect(() => {
     const t1 = setTimeout(() => setPhase(1), 800);
-    const t2 = setTimeout(() => { setGreeting('Building your ultimate catalog... 📦'); setPhase(2); }, 2400);
+    const t2 = setTimeout(() => { setGreeting('Discovering world-class products for you... ✨'); setPhase(2); }, 2400);
     const t3 = setTimeout(() => setPhase(3), 4200);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
