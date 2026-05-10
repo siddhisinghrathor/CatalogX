@@ -22,8 +22,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className={`max-w-7xl mx-auto flex items-center justify-between p-4 rounded-[2rem] transition-all duration-500 ${scrolled ? 'glass shadow-2xl' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 px-10 md:px-24 py-6 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+      <div className={`max-w-7xl mx-auto flex items-center justify-between p-4 rounded-4xl transition-all duration-500 ${scrolled ? 'glass shadow-2xl' : 'bg-transparent'
         }`}>
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-xl group-hover:rotate-[15deg] transition-transform duration-500">
@@ -44,7 +44,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <div className="w-[1px] h-6 bg-white/10 mx-2" />
+          <div className="w-px h-6 bg-white/10 mx-2" />
           <MagneticButton>
             <Link
               to="/contact"
@@ -97,7 +97,7 @@ const Navbar = () => {
 
 const Footer = () => (
   <footer className="relative z-10 border-t border-white/5 py-40 bg-black mt-20">
-    <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-20">
+    <div className="container mx-auto px-10 md:px-24 grid grid-cols-1 md:grid-cols-4 gap-20">
       <div className="col-span-1 md:col-span-2">
         <div className="flex items-center gap-3 mb-10">
           <div className="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center font-black text-2xl">F</div>
@@ -125,7 +125,7 @@ const Footer = () => (
         </ul>
       </div>
     </div>
-    <div className="container mx-auto px-4 mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 font-bold uppercase tracking-widest text-[10px]">
+    <div className="container mx-auto px-10 md:px-24 mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 font-bold uppercase tracking-widest text-[10px]">
       <p>&copy; 2026 FlexiCatalog. Built with Passion.</p>
       <div className="flex gap-12">
         <span className="hover:text-white cursor-pointer transition-colors">Legal Details</span>
@@ -140,7 +140,7 @@ const Layout = () => {
     <div className="min-h-screen flex flex-col bg-black relative">
       <FloatingParticles />
       <Navbar />
-      <main className="flex-grow relative z-10">
+      <main className="grow relative z-10">
         <Outlet />
       </main>
       <Footer />

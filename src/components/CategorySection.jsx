@@ -51,7 +51,7 @@ const CategorySection = ({ title, products, layout = 'horizontal' }) => {
     >
       {/* Header - Cleaned up: removed right-side info and buttons */}
       {title && (
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-10 md:px-24">
           <div>
             <h2 className="text-3xl md:text-5xl font-light tracking-widest uppercase text-white/90">{title}</h2>
           </div>
@@ -98,8 +98,8 @@ const CategorySection = ({ title, products, layout = 'horizontal' }) => {
         <div
           ref={layout === 'horizontal' ? scrollRef : null}
           className={layout === 'horizontal' 
-            ? "flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-10 px-4 md:px-0 snap-x snap-mandatory"
-            : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-10 px-4 md:px-0"
+            ? "flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-10 px-10 md:px-24 snap-x snap-mandatory"
+            : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-10 px-10 md:px-24"
           }
           style={layout === 'horizontal' ? {
             touchAction: 'pan-x',

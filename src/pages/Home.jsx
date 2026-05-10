@@ -36,7 +36,7 @@ const Home = () => {
       {/* Minimalist Ambient Glow */}
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/10 via-black to-black pointer-events-none z-0" />
       
-      <div className="relative z-10 container mx-auto px-4 pt-40 pb-20">
+      <div className="relative z-10 container mx-auto px-10 md:px-24 pt-40 pb-20">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">

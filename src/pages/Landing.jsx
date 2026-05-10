@@ -242,7 +242,7 @@ const Landing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCTA, setShowCTA]   = useState(false);
   const [mouseX, setMouseX]     = useState(0);
-  const [greeting, setGreeting] = useState('Hi! I\'m Siddhi ✨');
+  const [greeting, setGreeting] = useState('Hi! I\'m Siddhi. Ready to discover? 🚀');
 
   // Mouse tracking for eye
   useEffect(() => {
@@ -254,7 +254,7 @@ const Landing = () => {
   // Intro sequence — all timers cleaned up on unmount
   useEffect(() => {
     const t1 = setTimeout(() => setPhase(1), 800);
-    const t2 = setTimeout(() => { setGreeting('Watch this… 🎩'); setPhase(2); }, 2400);
+    const t2 = setTimeout(() => { setGreeting('Building your ultimate catalog... 📦'); setPhase(2); }, 2400);
     const t3 = setTimeout(() => setPhase(3), 4200);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
@@ -332,7 +332,7 @@ const Landing = () => {
         ───────────────────────────────────────── */}
         <motion.div
           style={{ opacity: heroOpacity, y: heroY, scale: heroScale, filter: heroBlur }}
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 gap-6"
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-10 md:px-24 gap-6"
         >
           {/* Bot Siddhi */}
           <motion.div
@@ -360,11 +360,19 @@ const Landing = () => {
           </motion.div>
 
           {/* FLEXICATALOG — from below, blurry → crisp */}
-          <AnimatePresence>
             {phase >= 2 && (
-              <FlexiTitle show={phase >= 2} />
+              <div className="flex flex-col items-center">
+                <FlexiTitle show={phase >= 2} />
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.5, duration: 0.8 }}
+                  className="text-blue-400 text-sm md:text-base font-bold uppercase tracking-[0.5em] mt-4"
+                >
+                  AI-Powered Product Discovery
+                </motion.p>
+              </div>
             )}
-          </AnimatePresence>
 
           {/* Subtitle + scroll cue */}
           <AnimatePresence>
@@ -405,7 +413,7 @@ const Landing = () => {
         ───────────────────────────────────────── */}
         <motion.div
           style={{ opacity: tagOpacity, y: tagY }}
-          className="absolute inset-0 z-20 flex items-center justify-center px-6 pointer-events-none"
+          className="absolute inset-0 z-20 flex items-center justify-center px-10 md:px-24 pointer-events-none"
         >
           <div className="text-center max-w-5xl">
             <div className="text-[4.5vw] md:text-[3.5vw] font-extralight leading-[1.1] text-white tracking-tight">
@@ -423,7 +431,7 @@ const Landing = () => {
         ───────────────────────────────────────── */}
         <motion.div
           style={{ opacity: feat3Opacity, y: feat3Y }}
-          className="absolute inset-0 z-20 flex items-center justify-center px-6 bg-black/85"
+          className="absolute inset-0 z-20 flex items-center justify-center px-10 md:px-24 bg-black/85"
         >
           <div className="max-w-5xl w-full">
             <div className="text-center mb-12">
@@ -449,7 +457,7 @@ const Landing = () => {
         ───────────────────────────────────────── */}
         <motion.div
           style={{ opacity: ctaOp, y: ctaY2 }}
-          className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-10 px-6"
+          className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-10 px-10 md:px-24"
         >
 
           <div className="flex flex-col items-center gap-6">

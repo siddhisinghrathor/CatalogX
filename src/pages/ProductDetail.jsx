@@ -23,7 +23,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 pt-32 pb-20">
+    <div className="container mx-auto px-10 md:px-24 pt-32 pb-20">
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
