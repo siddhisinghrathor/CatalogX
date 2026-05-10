@@ -98,9 +98,9 @@ const BotSiddhi = ({ isSmiling = false, mouseX = 0 }) => (
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.6 }}
-      className="mt-6 text-[10px] uppercase tracking-[0.35em] text-blue-300/80 font-semibold"
+      className="mt-6 text-xs uppercase tracking-[0.4em] text-white font-bold drop-shadow-[0_0_8px_rgba(147,197,253,0.9)]"
     >
-      AI Bot Siddhi
+      · AI Bot Siddhi ·
     </motion.div>
   </div>
 );
@@ -414,9 +414,7 @@ const Landing = () => {
             <div className="text-[4.5vw] md:text-[3.5vw] font-black leading-[1.1] italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
               engineered for perfection.
             </div>
-            <p className="mt-8 text-slate-500 text-lg font-light max-w-2xl mx-auto">
-              Every pixel, every interaction — designed to guide you deeper into a world-class journey.
-            </p>
+
           </div>
         </motion.div>
 
@@ -453,9 +451,6 @@ const Landing = () => {
           style={{ opacity: ctaOp, y: ctaY2 }}
           className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-10 px-6"
         >
-          <p className="text-slate-500 text-xs uppercase tracking-[0.4em]">
-            You've seen the world. Now enter it.
-          </p>
 
           <div className="flex flex-col items-center gap-6">
             {/* Bot slides in from left */}

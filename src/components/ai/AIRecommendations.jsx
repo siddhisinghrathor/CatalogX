@@ -43,7 +43,7 @@ const AIRecommendations = ({ currentProduct }) => {
         const fallback = productsData
           .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
           .slice(0, 3)
-          .map(p => ({ ...p, reason: "Similar Category" }));
+          .map(p => ({ ...p, reason: '' }));
         setRecommendations(fallback);
       } finally {
         setIsLoading(false);
@@ -84,24 +84,24 @@ const AIRecommendations = ({ currentProduct }) => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
               navigate(`/product/${rec.id}`);
             }}
-            className="group cursor-pointer glass p-4 rounded-3xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-2"
+            className="group cursor-pointer glass p-4 rounded-[2rem] border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-2"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4 relative bg-black/40 border border-white/5 p-6 flex items-center justify-center">
+            <div className="aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-4 relative bg-black/40 border border-white/5 p-6 flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
               <img 
                 src={rec.image} 
                 alt={rec.itemname} 
                 className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute bottom-3 left-3 right-3 z-20">
-                <p className="text-xs font-bold text-primary bg-primary/20 backdrop-blur-md px-2 py-1 rounded inline-block">
-                  {rec.reason}
-                </p>
+              {/* Hover popup */}
+              <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg tracking-wide">
+                  Click to view details
+                </div>
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">{rec.itemname}</h3>
-              <p className="text-sm text-slate-500 uppercase tracking-wider">{rec.category}</p>
+              <h3 className="text-xl font-bold">{rec.itemname}</h3>
             </div>
           </motion.div>
         ))}

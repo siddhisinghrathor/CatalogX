@@ -41,7 +41,7 @@ const ProductDetail = () => {
           className="relative group"
         >
           <div className="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 group-hover:opacity-30 transition-opacity" />
-          <div className="relative aspect-square rounded-3xl overflow-hidden bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(59,130,246,0.3)] p-12 flex items-center justify-center">
+          <div className="relative aspect-square rounded-[1.5rem] overflow-hidden bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(59,130,246,0.3)] p-12 flex items-center justify-center">
             <motion.img
               animate={{ y: [-15, 15, -15] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
@@ -59,9 +59,7 @@ const ProductDetail = () => {
           className="flex flex-col h-full"
         >
           <div className="mb-8">
-            <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold border border-primary/20 mb-4 inline-block">
-              {product.category}
-            </span>
+
             <h1 className="text-5xl md:text-6xl font-black mb-4 tracking-tighter">
               {product.itemname}
             </h1>

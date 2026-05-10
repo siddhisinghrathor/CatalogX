@@ -122,7 +122,7 @@ const Home = () => {
               {Object.entries(groupedProducts).map(([category, products]) => (
                 <CategorySection 
                   key={category} 
-                  title={category} 
+                  title={selectedCategory === 'All' ? category : ''} 
                   products={products} 
                   layout={selectedCategory === 'All' ? 'horizontal' : 'grid'}
                 />

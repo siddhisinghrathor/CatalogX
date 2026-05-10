@@ -50,11 +50,13 @@ const CategorySection = ({ title, products, layout = 'horizontal' }) => {
       className="relative group/section"
     >
       {/* Header - Cleaned up: removed right-side info and buttons */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-4">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-light tracking-widest uppercase text-white/90">{title}</h2>
+      {title && (
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-4">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-widest uppercase text-white/90">{title}</h2>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Carousel Container */}
       <div className={`relative ${layout === 'horizontal' ? 'overflow-visible' : ''}`}>
@@ -102,7 +104,10 @@ const CategorySection = ({ title, products, layout = 'horizontal' }) => {
           style={layout === 'horizontal' ? {
             touchAction: 'pan-x',
             scrollbarWidth: 'none',
-            msOverflowStyle: 'none'
+            msOverflowStyle: 'none',
+            overflowY: 'visible',
+            paddingTop: '56px',
+            marginTop: '-56px',
           } : {}}
         >
           {products.map((product) => (
